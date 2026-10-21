@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Physical Computing Fall 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {
+  font-family: "Poppins", sans-serif
+  }
+body {
+  font-size:16px;
+  }
+h1 { 
+  font-size:30px;
+  }
+h2 {
+  font-size:25px;
+  }
+  h3 {
+  font-size:18px;
+  }
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.grid img {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background-color: #f2f2f2;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+.activity3-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+.activity3-grid > img,
+.activity3-grid > video {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.modal-video {
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+}
+@media (max-width: 900px) {
+  .grid,
+  .activity3-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .grid,
+  .activity3-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.w3-half img{
+  margin-bottom:-6px;
+  margin-top:16px;
+  opacity:0.8;
+  cursor:pointer
+  } */
+.w3-half img:hover{
+  opacity:1
+  }
+
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-light-grey w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:200px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-display-topleft" style="display:none;font-size:22px"></a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>IXD<br>DESN 30146<br>Fall 2026</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#Home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#Module1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Module 1</a> 
+    <a href="#Activity1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Activity 1</a> 
+    <a href="#Activity2" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Activity 2</a>
+    <a href="#Activity3" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Activity 3</a>
+    <a href="#ResearchActivity" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Research Activity</a>
+    <a href="#ProjectConcept" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Project Concept</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens
+<header class="w3-container w3-top w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Menu</span>
+</header> -->
+
+<!-- 
+  if you want to link your image to a video use one of the following alt links as an example:
+
+  alt="test1Lorem ipsum dolor sit amet, consectetur adipiscing elit test1Lorem ipsum dolor sit amet, consectetur adipiscing elit <a href='https://www.youtube.com/embed/tgbNymZ7vqY' target='_blank'><p>Project Video Link</p></a>"> 
+  alt="test2Lorem ipsum dolor sit amet, consectetur adipiscing elit <div class='container'><iframe class='responsive-iframe' src='https://www.youtube.com/embed/tgbNymZ7vqY'></iframe></div>">
+
+-->
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:220px;margin-right:20px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="default">
+    <h1 class="w3-jumbo" id="Home"><b>Physical Computing</b></h1>
+    <h1 class="w3-xxxlarge w3-text-blue"><b>Module 1</b></h1>
+      <h1 class="w3-xxxlarge w3-text-blue"><b>Jasmine Rose Ramos</b></h1>
+    <hr style="width:50px;border:5px solid grey" class="w3-round">
+  </div>
+  <!-- Boilerplate -->
+  <div id="Module1" class="w3-container" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Module 1</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <h2>Activity Research</h2>
+  </div>
+  
+  <!-- Project 1 Photo grid (modal) -->
+  <div id="Activity1" >
+    <h2>Activity 1</h2>
+    <div class="grid">
+      <img src="images/Activity1/image1.png" style="width:100%" onclick="onClick(this)" alt="I opened the Arduino IDE (v2.3.10) to start setting up my code environment. The editor loaded a fresh sketch showing the standard setup() and loop() functions, which form the core structure for writing my microcontroller program.">
+      <img src="images/Activity1/image2.png" style="width:100%" onclick="onClick(this)" alt="I wrote the initial code to make the built-in LED blink by setting LED_BUILTIN as an output in setup(). In the main loop, I used digitalWrite() commands along with delay(1000) to program the light to alternate on and off every second.">
+      <img src="images/Activity1/image3.png" style="width:100%" onclick="onClick(this)" alt="I plugged my Arduino Uno board into my computer using a USB cable to power it up and run my uploaded script. Seeing the lights turn on directly on the board confirmed that my code compiled successfully and transferred to the hardware.">
+      <img src="images/Activity1/image4.png" style="width:100%" onclick="onClick(this)" alt="I went back into the code to experiment with timing and adjusted how long the light stays on. By changing the high-state delay to delay(2000), I programmed the light to hold for two full seconds before turning off for one second, creating an uneven blinking pattern.">
+      <img src="images/Activity1/image5.png" style="width:100%" onclick="onClick(this)" alt="I opened ProtoPie Connect to set up real-time interaction between my physical Arduino hardware and a digital interface. In the Arduino Settings window, I mapped the board's port and changed the baud rate to 115200 to ensure high-speed serial communication between both systems.">
+    </div>
+  </div>
+  
+  <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round"></hr>
+
+  <div id="Activity2" class="w3-row-padding">
+    <h2>Activity 2</h2>
+    <div class="grid">
+      <img src="images/Activity2/image1.png" style="width:100%" onclick="onClick(this)" alt="I wrote and compiled the C++ script in the Arduino IDE (v2.3.10) to read data from the environmental sensors connected to my board. Opening the Serial Monitor allowed me to inspect the real-time serial output, verifying that formatted values for temperature, humidity, and dial degree readings were broadcasting correctly at 115200 baud.">
+      <img src="images/Activity2/image2.png" style="width:100%" onclick="onClick(this)" alt="I set up my physical workspace with my laptop connected directly to the Arduino Sensor Kit shield via USB. On screen, I opened my ProtoPie Studio project to start mapping the UI components to incoming sensor values from the physical board.">
+      <img src="images/Activity2/image3.png" style="width:100%" onclick="onClick(this)" alt="I designed the digital thermostat UI layout in ProtoPie, featuring a prominent circular dial, numerical temperature and humidity indicators, and control toggles. I then generated a network IP connection and QR code to pair the prototype directly to a mobile testing device.">
+      <img src="images/Activity2/image4.png" style="width:100%" onclick="onClick(this)" alt="I loaded the pie file ProtoPie_TempHumid_withControls_jasmine into ProtoPie Connect to handle incoming serial messages from the hardware. I checked the network settings dropdown menu to select the proper local IP address (10.16.138.202) and ensure the local server was running properly.">
+      <img src="images/Activity2/image5.png" style="width:100%" onclick="onClick(this)" alt="I completed the full physical-to-digital loop by pairing my smartphone running ProtoPie Player to the ProtoPie Connect server. As I interacted with the physical sensors, the mobile app updated dynamically in real time—displaying an active room temperature reading of 24°C and a relative humidity level of 44%.">
+    </div>
+  </div>
+
+  <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round"></hr>
+
+  <div id="Activity3" class="w3-row-padding">
+    <h2>Activity 3</h2>
+    <div class="activity3-grid">
+      <img src="images/Activity3/image1.png" onclick="onClick(this)" alt="I wrote an Arduino sketch (PotSeedShield.ino) to read analog signals from a potentiometer connected to pin A0 on my Arduino Sensor Kit shield. Using analogRead() and the map() function, I scaled the raw sensor input ($0$ to $1023$) to a normalized range of $0$ to $100$ and verified the output values in the Serial Monitor operating at 9600 baud. "> 
+      <img src="images/Activity3/image2.png" onclick="onClick(this)" alt="I placed my laptop on my workstation desk with the Arduino Sensor Kit shield plugged in via USB. With the code uploaded, I manually turned the rotary potentiometer knob on the shield to generate real-time changing data inputs. The Serial Monitor displayed the corresponding mapped values, confirming that the potentiometer was functioning correctly and sending accurate readings to the Arduino board.">
+      <img src="images/Activity3/image3.png" onclick="onClick(this)" alt="I built a TouchDesigner node network using DATs and CHOPs—including select, datto, math, filter, and null operators—to process the incoming serial stream. I mapped the smoothed output channel to a 3D sphere SOP, controlling the size and scale of a vibrant red-orange glowing orb on screen.">
+      <img src="images/Activity3/image4.png" onclick="onClick(this)" alt="I configured the Serial DAT operator inside TouchDesigner to establish communication with the hardware. I turned the operator active, selected the matching USB serial port (/dev/cu.usbmodem1301), and aligned the baud rate to 9600 so TouchDesigner could parse incoming data line by line.">
+      <video src="images/Activity3/video1.mp4" onclick="onClick(this)" controls preload="metadata" aria-label="I tested the interactive physical-to-visual link in real time by adjusting the potentiometer knob on the shield while watching the TouchDesigner viewport. Turning the hardware dial instantly scaled the 3D glowing sphere visual on my screen, creating a seamless bridge between physical input and dynamic generative graphics."></video>
+    </div>
+  </div>
+
+  <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round"></hr>
+
+  <div id="ResearchActivity" class="w3-row-padding">
+    <h2>Research Activity</h2>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <h2>Consumer Trend Research</h2>
+    <div class="grid">
+      <img src="images/Research/image1.png" style="width:100%" onclick="onClick(this)"> 
+      <img src="images/Research/image2.png" style="width:100%" onclick="onClick(this)" >
+      <img src="images/Research/image3.png" style="width:100%" onclick="onClick(this)" >
+    </div>
+    <h2>Personas Research</h2>
+    <div class="grid">
+      <img src="images/Research/image4.png" style="width:100%" onclick="onClick(this)" >
+      <img src="images/Research/image5.png" style="width:100%" onclick="onClick(this)" >
+      <img src="images/Research/image6.png" style="width:100%" onclick="onClick(this)" >
+    </div>
+    <h2>HMI Research</h2>
+    <div class="grid">
+      <img src="images/Research/image7.png" style="width:100%" onclick="onClick(this)" >
+      <img src="images/Research/image8.png" style="width:100%" onclick="onClick(this)" >
+    </div>
+    <h2>Project Path</h2>
+    <div class="grid">
+      <img src="images/Research/image9.png" style="width:100%" onclick="onClick(this)" >
+      <img src="images/Research/image10.png" style="width:100%" onclick="onClick(this)" >
+      <img src="images/Research/image11.png" style="width:100%" onclick="onClick(this)" >
+    </div>
+  </div>
+
+  <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round"></hr>
+
+  <!-- Boilerplate -->
+  <div id="ProjectConcept" class="w3-container" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Project 1 Concept</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <h2>Project 1 Concept</h2>
+    <p>Emergency Commuter Tool
+    </p>
+    <img src="images/Concept/image.png" style="width:100%" onclick="onClick(this)" alt="A stealth emergency notification system built into everyday wearables or keychain, allowing users to send silent alert codes without opening a phone.">
+  </div>
+  
+   <!-- Modal for full size images on click-->
+   <div id="modal01" class="w3-modal w3-grey" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-center w3-transparent" style ="padding:20px">
+      <img id="img01" class="w3-image">
+      <video id="video01" class="modal-video" onclick="event.stopPropagation()" controls></video>
+      <h2 id="caption"></h2>
+
+      <!-- <div id="urLink"></div> -->
+      <!-- <a id="urLink" class="container"><iframe class="responsive-iframe"></iframe></a> -->
+    <!-- </div> -->
+  </div>
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+
+<script>
+
+// Modal Image Gallery
+function onClick(element) {
+  var image = document.getElementById("img01");
+  var video = document.getElementById("video01");
+
+  image.style.display = "none";
+  video.style.display = "none";
+
+  if (element.tagName === "VIDEO") {
+    video.src = element.currentSrc || element.src;
+    video.style.display = "block";
+  } else {
+    image.src = element.src;
+    image.style.display = "block";
+  }
+
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+
+  // var captionUrl = document.getElementById("urLink");
+  // captionUrl.innerHTML = element.url;
+
+  //document.getElementById("urLink").src = element.url;
+}
+</script>
+
+</body>
+</html>
